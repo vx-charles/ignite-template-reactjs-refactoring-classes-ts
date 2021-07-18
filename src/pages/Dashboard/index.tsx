@@ -46,18 +46,16 @@ export function Dashboard() {
   }
 
   const handleUpdateFood = async (food: Foods) => {
-    // const { foods, editingFood } = this.state;
-
     try {
-      const foodUpdated = await api.put(
+      const foodUpdated = await api.put( // altera um produto da lista solicitado.
         `/foods/${editingFood.id}`,
         { ...editingFood, ...food },
       );
-
-      const foodsUpdated = foods.map(f =>
+      
+      const foodsUpdated = foods.map(f => // atualiza a lista inteira com o produto alterado.
         f.id !== foodUpdated.data.id ? f : foodUpdated.data,
       );
-
+        
       setFoods(foodsUpdated);
     } catch (err) {
       console.log(err);
