@@ -45,7 +45,7 @@ export function Dashboard() {
     }
   }
 
-  const handleUpdateFood = async (food: object) => {
+  const handleUpdateFood = async (food: Foods) => {
     // const { foods, editingFood } = this.state;
 
     try {
